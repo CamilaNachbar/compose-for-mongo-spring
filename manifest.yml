@@ -1,0 +1,18 @@
+declared-service:
+- poc-compra-certa-mongo:
+    label: poc-compra-certa-mongo
+    plan: lite
+applications:
+- name: teste
+  host: teste
+  instances: 1
+  memory: 1024M
+  buildpack: java_buildpack
+  path: target/caminho.war
+  services:
+  - mongo
+  env:
+    TRUSTED_CA_CERTIFICATE: |-
+      -----BEGIN CERTIFICATE-----
+
+      -----END CERTIFICATE-----
